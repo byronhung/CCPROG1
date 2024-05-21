@@ -1,33 +1,27 @@
 #include <stdio.h>
-	
+
 int main() {
-	char name;
-	char cProduct;
-	float fPrice, fTotal;
-	int quantity;
-	
+    char name;
+    char cProduct;
+    float fPrice, fTotal;
+    int quantity;
 
+    printf("What is the first letter of your name?\n");
+    scanf(" %c", &name); 
 
-	printf("WHat is the first letter of your name?\n");
-	scanf("%c", &name);
+    printf("Welcome %c, what would you like to purchase?\n", name);
+    scanf(" %c", &cProduct); 
 
-	
-	printf("Welcome %c, what would you like to purchase?\n", name);
-	scanf("%c", &cProduct);
+    printf("What is the price of the product?\n");
+    scanf("%f", &fPrice);
 
+    printf("How many %c would you like to buy?\n", cProduct);
+    scanf("%d", &quantity);
 
-	printf("What is the price of the product?\n");
-	scanf("%f", &fPrice);
+    fTotal = fPrice * quantity;
 
-	printf("How many %c would you like to buy?\n", cProduct);
-	scanf("%d", &quantity);
+    printf("Your total will be: P%.2f\n", fTotal);
 
-
-	fTotal = fPrice * quantity;
-
-	printf("Your total will be : P%.2f", fTotal);
-
-
-
-return 0;
+    return 0;
 }
+
