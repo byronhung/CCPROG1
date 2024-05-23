@@ -1,0 +1,18 @@
+#include <stdio.h>
+#include <math.h>
+
+int main (){
+	int iRad;
+	double fArea;
+	
+	//gather the input (radius) from the user
+	
+	printf("Please input the radius of the circle : ");
+	scanf("%d", &iRad);
+	
+	fArea = 3.1416 * pow(iRad, 2);
+	
+	printf("The area of the circle with radius %d cm is %.2f sq. cm", iRad, fArea);
+	
+return 0;
+}
