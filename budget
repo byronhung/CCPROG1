@@ -1,0 +1,44 @@
+#include <stdio.h>
+
+void compareValue (int *iAmount, int iBudget) {
+	
+	if (*iAmount == iBudget) {
+		
+		printf("Exact Budget");
+		
+	} else if (*iAmount > iBudget) {
+		
+		printf("Over Budget");
+	
+	} else {
+		
+		printf("In Budget");
+	}
+}
+
+int main () {
+	
+	int iAmount, iBudget, iAnswer;
+	
+	//ask the user for the amount and input
+	printf("Please input the amount : ");
+	scanf("%d", &iAmount);
+	
+	printf("Please input the amount : ");
+	scanf("%d", &iBudget);
+	
+	// if the amount is less than the budget, ask if want to add
+	if (&iAmount < iBudget) {
+		
+		printf("Do you want to add the amount?\nType 1 for Yes, type 2 for No");
+		scanf("%d", &iAnswer);
+	}
+	
+	if (iAnswer == 1) {
+		
+		printf("How much do you want to add? ");
+		scanf("d", &input)
+	}
+	
+	return 0;
+}
