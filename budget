@@ -1,44 +1,65 @@
 #include <stdio.h>
 
-void compareValue (int *iAmount, int iBudget) {
+void compareValue(int *iAmount, int iBudget) {
 	
-	if (*iAmount == iBudget) {
+	int iAdd, iAnswer;
+	do {
 		
-		printf("Exact Budget");
+		if (*iAmount >= iBudget) {
+			
+			printf("Over Budget");
+			break;
+			
+		}
 		
-	} else if (*iAmount > iBudget) {
+		//ask the user if he or she wants to add to the amount
+		printf("Do you want to add to your amount?\n\nEnter 1 for Yes\nEnter 2 for No : ");
+		scanf("%d", &iAnswer);
 		
-		printf("Over Budget");
-	
-	} else {
+		if (iAnswer == 1) {
+			
+			printf("Input the amount you wish to add : ");
+			scanf("%d", &iAdd);
+			*iAmount += iAdd;
+			printf("Your total amount is : %d\n\n", *iAmount);
+			
+			//check if over budget already
+			if (*iAmount >= iBudget) {
+				
+				printf("Over Budget");
+			}
+			
+		} else {
+			
+			printf("User opted to not add to the amount");
+			break;
+			
+		}
 		
-		printf("In Budget");
+		
 	}
+	while (*iAmount < iBudget);
+	
 }
+
 
 int main () {
 	
-	int iAmount, iBudget, iAnswer;
+	int iAmount, iBudget, iAnswer, iAdd;
 	
 	//ask the user for the amount and input
-	printf("Please input the amount : ");
+	printf("Please input the Amount : ");
 	scanf("%d", &iAmount);
 	
-	printf("Please input the amount : ");
+	printf("Please input the Budget : ");
 	scanf("%d", &iBudget);
 	
-	// if the amount is less than the budget, ask if want to add
-	if (&iAmount < iBudget) {
-		
-		printf("Do you want to add the amount?\nType 1 for Yes, type 2 for No");
-		scanf("%d", &iAnswer);
-	}
+	printf("\n");
 	
-	if (iAnswer == 1) {
-		
-		printf("How much do you want to add? ");
-		scanf("d", &input)
-	}
+	//compare the values
+	compareValue(&iAmount, iBudget);
+	
+
 	
 	return 0;
 }
